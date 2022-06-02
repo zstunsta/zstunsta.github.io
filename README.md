@@ -1,3 +1,2 @@
 # zstunsta-github.io
-Trial
-Add Dark Mode
+Added Dark Mode

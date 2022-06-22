@@ -339,11 +339,12 @@ header {
     background-blend-mode: multiply;
     color: var(--clr-light);
     text-align: center;
+    overflow: hidden; /*Added overflow hidden 6/22/22. */
 }
 
 .section__title--projects {
     color: var(--clr-accent);
-    position: relative;
+    position: relative; 
 }
 
 .section__title--projects::after {
@@ -363,10 +364,13 @@ header {
     max-width: 500px;
     margin: 0 auto;
 }
-
+.proj_img {
+    max-width:500px;
+    margin: 0 auto;
+}
 @media (min-width: 800px) {
     .project {
-        display: flex;
+        display: contents; /*Changed flex to contents 6/22/22. */
         max-width: 1000px;
         margin: 0 auto;
     }

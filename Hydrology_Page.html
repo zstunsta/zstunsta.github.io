@@ -1,0 +1,166 @@
+<!-- Code Credit goes to Kevin Powell on Free Code Camp @ https://scrimba.com/g/gportfolio -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zach Tunstsall Geospatial Portfolio</title>
+        <!--cloudflare link to normalize between browsers -->
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">  
+        <!--cloudflare link to css-->
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css" 
+        integrity="sha512-9iWaz7iMchMkQOKA8K4Qpz6bpQRbhedFJB+MSdmJ5Nf4qIN1+5wOVnzg5BQs/mYH3sKtzY+DOgxiwMz8ZtMCsw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  
+         <!--font-awesome for icons-->
+        <script src="https://kit.fontawesome.com/92bcbc60ff.js" crossorigin="anonymous"></script>
+        <!--Google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header><!--Changed logo to button 6/1/22 -->
+           <!-- <div class="logo">  
+                <img src="img/logo.jpeg" alt="Cartoon of Zach with dog on sholders"> 
+            </div> -->
+            <button class="nav-toggle">
+                <span class="HAM"></span> <!--Hamburger with rotation-->
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav_item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav_item"><a href="#projects" class="nav__link">GIS Projects</a></li>
+                    <li class="nav_item"><a href="#about" class="nav__link">About me</a></li>
+                    <li class="nav_item"><a href="#work" class="nav__link">Other Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Introduction-->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Hi, I am <strong>Zach Tunstall</strong> 
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Geospatial Developer</p>
+            <img src="img/tall.jpg" alt="a picture of Zach Tunstall" class="intro__img"> 
+        </section>
+
+
+        <!--My GIS Projects, choose 3-->
+        <section class="projects" id="projects">
+            <h2 class="section__title section__title--projects">GIS Projects - I am currently working on my portfolio.  This section will host larger projects.
+                Enjoy the VIIRS Fire Detection Map I made until the portfolio is complete.
+            </h2>
+            <div class="project">
+
+                <div class="project">
+                    <h3>I do Flood Mapping</h3>
+                    <p></p>
+                    <img src="img/FlowArc2.jpg" alt="Map" class="proj_img">
+                </div> <!--Close project-->
+
+                <div class="project">
+                    <h3>Urban Growth and Change detection</h3>
+                    <p>Harnett County Futures Map 2010 - 2035</p>
+                </div> <!--Close project-->
+
+                <div class="project">
+                    <h3>Traveling Salesman</h3>
+                    <p>Historic La Serena Tour</p>
+                </div> <!--Close project-->
+            </div> <!--Close services-->
+        </section>
+
+        <!--About me-->
+        <section class="about-me" id="about">
+            <h2 class="section__title section__title--about">Who I am</h2>
+            <p class="section__subtitle section__subtitle--about">GIS Dev based out of LA</p>
+            <div class="about-me__body">
+                <p>I am a GIS developer who enjoys working in data to make a positive change.</p>
+                <p>I am highly profecient in a large number of GIS tools, software, and resources including open-source.</p>
+            </div>
+            <img src="img/headshot.jpg" alt="" class="about-me__img"> <!--Insert photo here-->
+            
+        </section>
+        
+        <!--my Work-->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">Other work</h2>
+            <p class="section__subtitle section__subtitle--work">Some of my stuff</p>
+
+            <div class="portfolio">
+                <!--Portfolio item 01 -->
+                <a href="https://ncsu.maps.arcgis.com/apps/Cascade/index.html?appid=1852f13cc58b4222aa73a8c877f7ab9b" class="portfolio__item">
+                    <img src="img/serena.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 02 -->
+                <a href="https://ncsu.maps.arcgis.com/apps/View/index.html?appid=3d00c09f8da343409b2a4ec9f11de93c" class="portfolio__item">
+                    <img src="img/evac.png" alt="#" class="portfolio__img">  <!--Check for copyrite on this photo -->
+                </a> 
+                <!--Portfolio item 03 -->
+                <a href="https://arcg.is/15zWb10" class="portfolio__item">
+                    <img src="img/The-Strand.png" alt="#" class="portfolio__img">
+               </a>
+                <!--Portfolio item 04-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/LT_hydro.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 05-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/Stream_extract.png" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 06-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/CostMap.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 07-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/Distance2Road.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 08-->
+                <a href="https://arcg.is/8iSbO" class="portfolio__item">
+                    <img src="img/noise.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 09-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/HSA.jpg" alt="#" class="portfolio__img">
+                </a>
+                <!--Portfolio item 10-->
+                <a href="portfolio-item.html" class="portfolio__item">
+                    <img src="img/DirDist.jpg" alt="#" class="portfolio__img">
+                </a>
+                  
+                        
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer class="footer">
+            <a href="mailto:zstunsta@ncsu.edu" class="footer-link">zstunsta@ncsu.edu</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/zstunsta">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/zach-tunstall-0421b384">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="#">
+                        <i class="fa-brands fa-codepen"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        <!--Dark Mode 'theme button'-->
+        <div class="theme-btn">
+            <img src="img/logo.jpeg"/>
+            <i class="fas fa-adjust"></i>
+        </div>
+        <script src="js/index.js"></script>
+    </body>
+</html> 

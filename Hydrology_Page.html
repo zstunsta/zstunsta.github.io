@@ -1,4 +1,3 @@
-<!-- Code Credit goes to Kevin Powell on Free Code Camp @ https://scrimba.com/g/gportfolio -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,122 +19,78 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header><!--Changed logo to button 6/1/22 -->
-           <!-- <div class="logo">  
-                <img src="img/logo.jpeg" alt="Cartoon of Zach with dog on sholders"> 
-            </div> -->
+        <header>
+            </div>
             <button class="nav-toggle">
-                <span class="HAM"></span> <!--Hamburger with rotation-->
+                <span class="HAM"></span> <!--Fun class for animation-->
             </button>
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav_item"><a href="#home" class="nav__link">Home</a></li>
-                    <li class="nav_item"><a href="#projects" class="nav__link">GIS Projects</a></li>
-                    <li class="nav_item"><a href="#about" class="nav__link">About me</a></li>
-                    <li class="nav_item"><a href="#work" class="nav__link">Other Work</a></li>
+                    <li class="nav_item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav_item"><a href="index.html#projects" class="nav__link">Core Competencies</a></li>
+                    <li class="nav_item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav_item"><a href="index.html#work" class="nav__link">Capstone Experience</a></li>
+                    <li class="nav_item"><a href="index.html#reflect" class="nav__link">Program Reflection</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!--Introduction-->
+
         <section class="intro" id="home">
-            <h1 class="section__title section__title--intro">
-                Hi, I am <strong>Zach Tunstall</strong> 
+            <h1 class="section__title section__title--intro"> Lillington, NC
+                <strong>Flood Discharge Hydrograph</strong> 
             </h1>
-            <p class="section__subtitle section__subtitle--intro">Geospatial Developer</p>
-            <img src="img/tall.jpg" alt="a picture of Zach Tunstall" class="intro__img"> 
+            <p class="section__subtitle section__subtitle--intro">Terrain Modeling</p>
+            <img src="img/LT_hydro.jpg" alt="Lillington, NC hydrograph" class="intro__img"> 
         </section>
 
+        <div class="portfolio-item-individual">                                                  
+            <strong>Problem description </strong>
+            <p>Lillington is a small town in North Carolina with a population of less than 5000 people.  
+                It is located in the heart of NC along the Cape Fear River.  Because of the town's close proximity to a major river, 
+                heavy rainfall events such as hurricanes cause water levels to rise to dangerous levels and threaten critical infrastructure.  
+                In the interest of protecting municipal infrastructure and private property, predicting stream runoff during a heavy rainfall could prove invaluable.  
+                One such method of flood prediction is to model a unit hydrograph using elevation data. 
+                 A unit hydrograph is a line chart that models water runoff due to excess precipitation over time.<br><br></p>
+            <strong>Analysis Procedure</strong>
+            <p>The methods and procedures needed to build the unit hydrograph model can be described in five parts. Precondition an elevation model, delineate a watershed, create a velocity field, create an isochrone map, and finally, plot the unit hydrograph.<br> <br>
+                The workflow for each of these methods will require the application of several GIS tools.  In order to precondition the Digital Elevation Model, or DEM, I had to first acquire elevation data.  The data source used in this model comes from an exported DEM from Google Earth Engine.  Next, I needed to identify and fill any sinks in the model in order to remove small imperfections and to create a smother model of water flow.  This part of the process also requires collecting an outlet point and establishing a study boundary.  For this model I have selected to use the local water treatment facility located adjacent to the Cape Fear River and limited the analysis to the local county boundary line.<br><br>
+                When the DEM is ready for analysis, the elevation model needs delineation to determine the watershed area which, is the area that water will eventually flow to the outlet point.  To do this the flow direction of the study area is calculated. Once a direction has been determined for each pixel in the study area, the flow accumulation tool is used to create a raster layer field that expresses where water is likely to accumulate.  After flow accumulation field is calculated, the watershed tool can calculate the effective watershed for the outlet point.<br><br>
+                At this point, a velocity field needs to be created.  This field will determine how fast water flows over a given surface and is calculated by the following formula:<br>
+                V = Vm * (sbAc) / (sbAcm); <br>
+                Where V is the velocity of a single cell with a local slope of s and an upstream contributing area of A. Coefficients b and c can be determined by calibration, a statistical method of tweaking model parameters so that predicted data is as close as possible to observed data.<br><br>
+                To create this velocity field I calculated the slope over the study area using the Slope tool and then used the resulting slope later to derive calculate the slope area term used in the above formula by taking the square root of the slope later and multiplying by the square root of the flow accumulation field.<br><br>
+                After calculating the velocity field, I created an isochrone map that predicts how fast water will flow through the velocity field and into the outlet point.  This map will yield how much time is needed for water to get from any point on the map and into the outlet point.  To calculate flow-time I used the following formulas:<br><br>
+                Flow time [T] = Flow Length [L] / Velocity [LT-1]  <br><br>
+                Flow time [T] = Flow Length [L] * Weight [L-1T]<br><br>
+                Using the system of equations above to solve for weight, the following formula is the result.<br><br>
+                Weight [L-1T] = 1 / Velocity [LT-1]  <br><br>
+                A weight grid layer was calculated using the map algebra tool to calculate the inverse of the velocity layer.  The next tool used in creating an isochrone map is the Flow Length tool.  Once this tool is ran, it yields a raster layer that has a continuous set of values that represent time that then need to be reclassified into discrete units.  For this model I have chosen to classify flow time by the minute.<br><br>
+                The final procedure in this project is to create a unit hydrograph table.  The isochrone map is converted into a table which hosts a count of pixels for every minute of flow time.  The resulting map shows this isochrone layer and how each color represents each area that is approximately the same amount of time required to reach the outlet point.  The pixel count from the isochrone table was converted to area which is used in the following equation that calculates the unit hydrograph.  The unity hydrograph was then plotted to a chart using a line graph.<br><br>
+                Ui = U(i∆t) = (A(i∆t) - A[(i - 1)∆t]) / ∆t;  <br><br>
+                Where A(t) is the cumulative drainage area that drains to the outlet within time t since rainfall began<br>
+                 This equation can be written simply as:<br><br>
+                Ui = Ai / ∆t<br><br>
+                Where Ai is the incremental drainage area of the ith isochrone zone.
+                </p>
+            <strong><br>Results</strong>
+            <p>The following chart is the result of the equations above applied to the isochrone table created for this model.  
+                From This chart we see that a maximum flood surge will occur at the 120 minutes after a major rainfall event.  There is also a surge in water discharge after 60 minutes. 
+                This hydrograph shows that the flooding will subside after 320 minutes after a major rainfall event has concluded.</p>
+            <img src="img/UH_linePlot.svg" alt="">
+            <p><br>The isochrone map below categorizes each 10-minute interval by plotting different colors in the area that covers the watershed for the water treatment facility.  
+                Note that the base map layer is derived from the slope of the digital elevation model.  
+                This is to display how the different landforms in the study area affect the rate at which water will flow to the outlet point of the water basin.  
+                Also included in the map is the Lillington city limits, the Harnett County boundary line and the water treatment facility location noted with the white marker.  
+                This gives context to the scale and location of the map and shows that water basins and other natural landforms do not always coincide with manmade boarders.</p>
+            <img src="img/LillingtonIsoChrone.jpg" alt="">
+            <strong><br>Reflection </strong>
+            <p>The overall purpose of this project was to develop skills in hydrologic modeling using data from non-governmental organizations.  With the continued expansion of free and open-source remote sensing data from platforms such as Google Earth Engine, I find it important to learn how to better use these platforms to perform data analysis.  While there are many datasets from sources such as the US Geological Survey, sometimes the needs of a project require unique data that is not within the coverage area of some of these sources.
+                The first step is the most critical and can be the most difficult to perfect.  Finding a source of a DEM that has not been resampled in any way ensures that the results are accurate.  Working through this model several times and trying to get a DEM that works at a spatial resolution of less than 30m2 will not yield results that are representative of real-world phenomena (at least at the time of this writeup).  Also, using a resampled DEM source will cause the isochrone map to have a more generalized output that is also not necessarily representative of the real world.  This leads to a unit hydrograph that does not have a bell curve shape.  
+                I believe that this project, like any other can benefit from reanalyzing the data using a variety of different sources.  As remote sensing platforms improve their spatial resolution, more accurate models will yield results that better describe real world phenomenon.
+                </p>
+        </div>                                                                                    <!--Project Writeup and photos-->
 
-        <!--My GIS Projects, choose 3-->
-        <section class="projects" id="projects">
-            <h2 class="section__title section__title--projects">GIS Projects - I am currently working on my portfolio.  This section will host larger projects.
-                Enjoy the VIIRS Fire Detection Map I made until the portfolio is complete.
-            </h2>
-            <div class="project">
-
-                <div class="project">
-                    <h3>I do Flood Mapping</h3>
-                    <p></p>
-                    <img src="img/FlowArc2.jpg" alt="Map" class="proj_img">
-                </div> <!--Close project-->
-
-                <div class="project">
-                    <h3>Urban Growth and Change detection</h3>
-                    <p>Harnett County Futures Map 2010 - 2035</p>
-                </div> <!--Close project-->
-
-                <div class="project">
-                    <h3>Traveling Salesman</h3>
-                    <p>Historic La Serena Tour</p>
-                </div> <!--Close project-->
-            </div> <!--Close services-->
-        </section>
-
-        <!--About me-->
-        <section class="about-me" id="about">
-            <h2 class="section__title section__title--about">Who I am</h2>
-            <p class="section__subtitle section__subtitle--about">GIS Dev based out of LA</p>
-            <div class="about-me__body">
-                <p>I am a GIS developer who enjoys working in data to make a positive change.</p>
-                <p>I am highly profecient in a large number of GIS tools, software, and resources including open-source.</p>
-            </div>
-            <img src="img/headshot.jpg" alt="" class="about-me__img"> <!--Insert photo here-->
-            
-        </section>
-        
-        <!--my Work-->
-        <section class="my-work" id="work">
-            <h2 class="section__title section__title--work">Other work</h2>
-            <p class="section__subtitle section__subtitle--work">Some of my stuff</p>
-
-            <div class="portfolio">
-                <!--Portfolio item 01 -->
-                <a href="https://ncsu.maps.arcgis.com/apps/Cascade/index.html?appid=1852f13cc58b4222aa73a8c877f7ab9b" class="portfolio__item">
-                    <img src="img/serena.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 02 -->
-                <a href="https://ncsu.maps.arcgis.com/apps/View/index.html?appid=3d00c09f8da343409b2a4ec9f11de93c" class="portfolio__item">
-                    <img src="img/evac.png" alt="#" class="portfolio__img">  <!--Check for copyrite on this photo -->
-                </a> 
-                <!--Portfolio item 03 -->
-                <a href="https://arcg.is/15zWb10" class="portfolio__item">
-                    <img src="img/The-Strand.png" alt="#" class="portfolio__img">
-               </a>
-                <!--Portfolio item 04-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/LT_hydro.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 05-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/Stream_extract.png" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 06-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/CostMap.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 07-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/Distance2Road.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 08-->
-                <a href="https://arcg.is/8iSbO" class="portfolio__item">
-                    <img src="img/noise.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 09-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/HSA.jpg" alt="#" class="portfolio__img">
-                </a>
-                <!--Portfolio item 10-->
-                <a href="portfolio-item.html" class="portfolio__item">
-                    <img src="img/DirDist.jpg" alt="#" class="portfolio__img">
-                </a>
-                  
-                        
-            </div>
-        </section>
-
-        <!--Footer-->
         <footer class="footer">
             <a href="mailto:zstunsta@ncsu.edu" class="footer-link">zstunsta@ncsu.edu</a>
             <ul class="social-list">
@@ -150,17 +105,19 @@
                     </a>
                 </li>
                 <li class="social-list__item">
-                    <a class="social-list__link" href="#">
+                    <a class="social-list__link" href="https://codepen.io/zstunsta">
                         <i class="fa-brands fa-codepen"></i>
                     </a>
                 </li>
             </ul>
         </footer>
-        <!--Dark Mode 'theme button'-->
         <div class="theme-btn">
             <img src="img/logo.jpeg"/>
             <i class="fas fa-adjust"></i>
         </div>
+        <script src="js/index.js"></script>
+    </body>
+
         <script src="js/index.js"></script>
     </body>
 </html> 

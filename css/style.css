@@ -8,15 +8,15 @@
 /* custom fonts */
 
 :root {
-    --ff-primary: 'Source Sans Pro', sans-serif;
-    --ff-secondary: 'Source Code Pro', monospace;
+    --ff-primary: 'sans pro', sans-serif;
+    --ff-secondary: 'Times', sans-serif;
 
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #16e063;
+    --clr-light: rgb(247, 209, 167);  /* fff BACKGROUND*/
+    --clr-dark: #130242; /* #303030 TEXT*/
+    --clr-accent: #4c9a6a; /* #16e063 FOREGROUND*/
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -28,10 +28,10 @@
 }
 
 .light-mode {
-    --clr-light:#303030;
-    --clr-dark:#1696e0;
-    --clr-accent:#fff;
-    /* new colors */
+    --clr-light:#71ad88f3; /* 303030 */
+    --clr-dark:#303030; /* 1696e0 */
+    --clr-accent:#528cb7; /* fff */
+    /* new colors (unused)*/
     --color-secondary: red;
     --color-grey-4: grey;
     --color-white: white;
@@ -261,7 +261,8 @@ header {
 
 .HAM {
     display: block;
-    position: relative;
+    position: fixed;
+    right: 2em;
 }
 
 .HAM,
@@ -269,7 +270,7 @@ header {
 .HAM::after {
     background: var(--clr-accent);
     width: 3em;
-    height: 2px;
+    height: 3px;
     border-radius: .5em;
     transition: transform 250ms ease-in-out;
 
@@ -334,7 +335,7 @@ header {
 
 .projects {
     background-color: var(--clr-dark);
-    background: url(../img/flowlines2.gif); /*../img/flowlines2.gif replace background image */
+    background: url(../img/NAFires.gif); /*../img/NAFiers.gif replace background image */
     background-size: 50rem;
     background-blend-mode: multiply;
     color: var(--clr-light);
@@ -430,14 +431,14 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     max-width: 0 auto;
     max-height: 0 auto;
 }
 
 .portfolio__item {
     background: var(--clr-accent);
-    overflow: hidden;
+    overflow: clip;
 }
 
 .portfolio__img {
@@ -505,7 +506,7 @@ text-decoration: none;
 
 .portfolio-item-individual {
     padding: 0 2em 2em;
-    max-width: 1000px;
+    max-width: 850px;
     margin: 0 auto;
 }
 

@@ -31,10 +31,6 @@
     --clr-light:#71ad88f3; /* 303030 */
     --clr-dark:#303030; /* 1696e0 */
     --clr-accent:#528cb7; /* fff */
-    /* new colors (unused)*/
-    --color-secondary: red;
-    --color-grey-4: grey;
-    --color-white: white;
 }
 
 @media (min-with: 800px) {
@@ -69,7 +65,6 @@ img {
 }
 
 /* Typography */
-
 strong {font-weight: var(--fw-bold);}
 
 h1,
@@ -98,6 +93,7 @@ h3 { font-size: var(--fs-h3);}
     font-size: var(--fs-h3);
 }
 .section__subtitle--intro,
+.section__subtitle--intro-prog,
 .section__subtitle--about {
     background: var(--clr-accent);
     padding: 0.25em 1em;
@@ -175,14 +171,8 @@ h3 { font-size: var(--fs-h3);}
   .theme-btn:active {
     transform: translateY(-3px);
   }
-  /*
-  .theme-btn i {
-    font-size: 1.4rem;
-    color: var(--color-grey-2);
-    pointer-events: none;
-  } */
-
-/* Header */
+ 
+  /* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -193,7 +183,6 @@ header {
 }
 
 /* Navigation */
-
 .nav {
     position: fixed;
     background: var(--clr-dark);
@@ -301,6 +290,10 @@ header {
     display: inline-block;
 }
 
+.section__subtitle--intro-prog {
+    display: inside;
+}
+
 @media (min-width: 600px) {
     .intro {
         display: grid;
@@ -329,15 +322,24 @@ header {
         left: -1.5em;
         width: calc(100% + 1.5em);
     }
+    .section__subtitle--intro-prog {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 6;
+        text-align: left;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
 }
 
 /* My Services */
 
 .projects {
     background-color: var(--clr-dark);
-    background: url(../img/NAFires.gif); /*../img/NAFiers.gif replace background image */
+    background: url(../img/AusFires.gif) bottom, url(../img/AusFires.gif) top; /*../img/NAFiers.gif replace background image */
     background-size: 50rem;
-    background-blend-mode: multiply;
+    background-blend-mode: normal; 
     color: var(--clr-light);
     text-align: center;
     overflow: hidden; /*Added overflow hidden 6/22/22. */
@@ -510,6 +512,17 @@ text-decoration: none;
     margin: 0 auto;
 }
 
+.portfolio-item-individual-table {
+    padding: 0 2em 2em;
+    padding-top: 1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;  
+    background-color: var(--clr-accent);
+    margin-top: 0em;
+    margin-bottom: 2em;
+    
+}
 .individual p {
     max-width: 800px;
     margin-left: auto;

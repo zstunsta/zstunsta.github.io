@@ -258,8 +258,8 @@ header {
 .HAM::before,
 .HAM::after {
     background: var(--clr-accent);
-    width: 3em;
-    height: 3px;
+    width: 4em;
+    height: 4px;
     border-radius: .5em;
     transition: transform 250ms ease-in-out;
 
@@ -431,7 +431,7 @@ header {
     text-align: center;
 }
 
-.portfolio {
+.portfolio {                   
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     max-width: 0 auto;
@@ -465,8 +465,9 @@ header {
     background: var(--clr-dark);
     color: var(--clr-accent);
     text-align: center;
-    padding: 2.5em 0;
+    padding: 3em 0;
     font-size: var(--fs-h3);
+    width: 100%;
     
 }
 
@@ -504,7 +505,7 @@ text-decoration: none;
     padding: .5em;
 }
 
-/* Individual portfolio item styles */
+/* Individual portfolio item styles */   /* TROUBLE SHOOT THIS SECTION TO GET PHOTOS TO ALIGN */
 
 .portfolio-item-individual {
     padding: 0 2em 2em;

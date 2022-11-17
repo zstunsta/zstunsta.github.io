@@ -14,9 +14,9 @@
     --fw-reg: 300;
     --fw-bold: 900;
 
-    --clr-light: rgb(240, 213, 173);  /* fff BACKGROUND*/
-    --clr-dark: #303030; /* #303030 TEXT*/
-    --clr-accent: #16e063; /* #16e063 FOREGROUND*/
+    --clr-light: rgb(255, 248, 241);  /* fff BACKGROUND*/
+    --clr-dark: #03031a; /* #303030 TEXT*/
+    --clr-accent: #36fa50; /* #16e063 FOREGROUND*/
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -28,9 +28,9 @@
 }
 
 .light-mode {
-    --clr-light:#71ad88f3; /* 303030 */
-    --clr-dark:#303030; /* 1696e0 */
-    --clr-accent:#528cb7; /* fff */
+    --clr-accent:#035c25f3; /* #528cb7 */
+    --clr-light:#e07407f3; /* #71ad88f3*/
+    --clr-dark:#100d3b; /* #1d0d3b */
 }
 
 @media (min-with: 800px) {
@@ -333,15 +333,17 @@ header {
     }
 }
 
-/* My Services */
+/* My Services Other GIS Work*/
 
 .projects {
     background-color: var(--clr-dark);
-    background: url(../img/AusFires.gif) bottom, url(../img/AusFires.gif) top; /*../img/NAFiers.gif replace background image */
+    background: url(../img/SAFires.gif) bottom, url(../img/SAFires.gif) top; /*../img/NAFiers.gif replace background image */
     background-size: 50rem;
-    background-blend-mode: normal; 
-    color: var(--clr-light);
+    background-blend-mode: normal;
+    background-repeat: initial;
+    color: var(--clr-dark);
     text-align: center;
+    
     overflow: hidden; /*Added overflow hidden 6/22/22. */
 }
 
@@ -356,7 +358,7 @@ header {
     width: 25%;
     height: 1px;
     margin: 0.5em auto 1em;
-    background: var(--clr-light);
+    background: var(--clr-dark);
     opacity: .1;
 }
 .projects {

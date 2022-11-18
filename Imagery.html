@@ -32,9 +32,9 @@
                     <li class="nav_item"><a href="index.html#home" class="nav__link">Home</a></li>
                     <li class="nav_item"><a href="index.html#about" class="nav__link">About me</a></li>
                     <li class="nav_item"><a href="index.html#work" class="nav__link">Capstone Experience</a></li>
-                    <li class="nav_item"><a href="index.html#Modeling" class="nav__link">Modeling and Analytics</a></li>
+                    <li class="nav_item"><a href="Hydrology_Page.html" class="nav__link">Modeling and Analytics</a></li>
                     <li class="nav_item"><a href="index.html#Imagery" class="nav__link">Imagery</a></li>
-                    <li class="nav_item"><a href="index.html#Web_Services" class="nav__link">Web Services</a></li>
+                    <li class="nav_item"><a href="Web_Services.html" class="nav__link">Web Services</a></li>
                     <li class="nav_item"><a href="index.html#Programming" class="nav__link">Programing</a></li>
                     <li class="nav_item"><a href="index.html#Reflect" class="nav__link">Program Reflection</a></li>
                 </ul>
@@ -43,141 +43,27 @@
 
 
         <section class="intro" id="home">
-            <h1 class="section__title section__title--intro"> Geospatial Programming 
-                <strong>VIIRS Fire Detection</strong> <!--Change Input for each project.-->
-                
+            <h1 class="section__title section__title--intro"> Remote Sensing 
+                <strong>Imagery</strong> <!--Change Input for each project.-->   
             </h1>
-            <p class="section__subtitle section__subtitle--intro-prog">This script tool gathers tab separated data from the University data base of VIIRS Fire detection locations and writes the data to a text file and converts the text <br>
-                 files into shape files.  The shapefiles are filtered and symbolized, added to a map layout, and exported as a GIF. For the time period selected by the user, the script <br>
-                 will export several GIFS at every habitable continent on Earth. These GIFs are combined and placed in an html file.<br></p> 
+            <p class="section__subtitle section__subtitle--intro-prog"><br></p> 
             <img src="img/Legend.JPG" alt="Lillington, NC hydrograph" class="intro__img"> 
         </section>
 
         <div class="portfolio-item-individual">
-            <center><strong>Project Github Link<br>https://github.com/tunstallzs/GIS540/blob/main/Final_Project_1.py<br><br></strong>
-            <img src="img/WorldFires3.gif" alt=""></center>
-            <p><br>This project aims to visualize change detection of forest fire location on a global scale.  
-                It requires a satellite platform that covers the globe on a daily basis.  
-                The Visible Infrared Imaging Radiometer Suite (VIIRS) sensor on the Suomi-NPP satellite uses a moderate imaging spectroradiometer that provides imagery at 375m resolution. 
-                While this may be considered coarse, it is perfect for capturing the entire globe in a short time span.  
-                The University of Maryland (UM) is responsible for creating an algorithm that is based on NASA's MODIS Fire Detection suite. 
-                UM provides data from the NOAA Satellite platform sensor VIIRS in a tab separated text file format.  
-                This data requires no log in credentials to access and is not specific to any one region. Most importantly, it is updated in “near real time” or on a daily basis.  
-                The text file format of this data makes it perfect to read and write using a python script.  
-                By taking fire detection information as a time series, we can detect when fires are forming, when they are extinguished, and we can identify areas where fires are more prevalent.  </p>
+            <strong><br><br><br></strong>
+            <img src="img/WorldFires3.gif" alt="">
+            <p><br></p>
             <img src="" alt="">
             <p></p>
             <img src="" alt="">
             <p></p>
         </div>
 
-        <div class="portfolio-item-individual-table">
-            <h1>Geoprocessing Tool GUI<br></h1>
-            <p><br></p>
-            <center>
-            <img src="img/toolGUI.jpg" alt="">
-            </center>
-            <p><table width="100%">
-                <tbody>
-                <tr>
-                <td width="19%">
-                <p><strong>Parameter</strong></p>
-                </td>
-                <td width="49%">
-                <p><strong>Explanation</strong></p>
-                </td>
-                <td width="9%">
-                <p><strong>Data Type</strong></p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>Start_Date</p>
-                </td>
-                <td>
-                <p><strong></strong></p>
-                <p>Select a Date that is after Febuary 4, 2020 (Data is unavailable before this date).</p>
-                <p></p>
-                </td>
-                <td>
-                <p>Date</p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>End_Date</p>
-                </td>
-                <td>
-                <p><strong></strong></p>
-                <p>Data is typically not available within 24 hours of the current date.</p>
-                <p></p>
-                </td>
-                <td>
-                <p>Date</p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>File_Directory</p>
-                </td>
-                <td>
-                <p>Parameter is set by default environment</p>
-                </td>
-                <td>
-                <p>Folder</p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>Day_Interval</p>
-                </td>
-                <td>
-                <p><strong></strong></p>
-                <p>Number of days to skip over.</p>
-                <p></p>
-                </td>
-                <td>
-                <p>Long</p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>Map_Document</p>
-                </td>
-                <td>
-                <p><strong></strong></p>
-                <p>Use the Default setting.</p>
-                <p></p>
-                </td>
-                <td>
-                <p>ArcMap Document</p>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <p>Confidence_Level</p>
-                </td>
-                <td>
-                <p><strong></strong></p>
-                <p>The probability that the sensor and algorithm returned an accurate reading.</p>
-                <p></p>
-                </td>
-                <td>
-                <p>Long</p>
-                </td>
-                </tr>
-                </tbody>
-                </table>
-            </p>
-        </div>
+        
         <section class="my-work" id="work">
             <div class="portfolio">
                 <img src="img/NAFires.gif" alt="#" class="portfolio__img">
-                <img src="img/EUFires.gif" alt="#" class="portfolio__img">
-                <img src="img/AsiaFires.gif" alt="#" class="portfolio__img">
-                <img src="img/SAFires.gif" alt="#" class="portfolio__img">
-                <img src="img/AfricaFires.gif" alt="#" class="portfolio__img">
-                <img src="img/AusFires.gif" alt="#" class="portfolio__img">
             </div>
         </section>                                                                                    
 

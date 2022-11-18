@@ -284,6 +284,7 @@ header {
 
 .intro__img {
     box-shadow: var(--bs);
+    
 }
 
 .section__subtitle--intro {
@@ -312,6 +313,7 @@ header {
         position: relative;
         z-index: 2;
     }
+    
 
     .section__subtitle--intro {
         align-self: start;
@@ -333,6 +335,7 @@ header {
     }
 }
 
+
 /* My Services Other GIS Work*/
 
 .projects {
@@ -340,11 +343,10 @@ header {
     background: url(../img/SAFires.gif) bottom, url(../img/SAFires.gif) top; /*../img/NAFiers.gif replace background image */
     background-size: 50rem;
     background-blend-mode: normal;
-    background-repeat: initial;
     color: var(--clr-dark);
     text-align: center;
     
-    overflow: hidden; /*Added overflow hidden 6/22/22. */
+    /*Added overflow hidden 6/22/22. */
 }
 
 .section__title--projects {
@@ -383,6 +385,7 @@ header {
     .project +.project {
         margin-left: 2em;
     }
+    
 
 
 }
@@ -508,10 +511,15 @@ text-decoration: none;
 }
 
 /* Individual portfolio item styles */   /* TROUBLE SHOOT THIS SECTION TO GET PHOTOS TO ALIGN */
-
+.webmap {
+    width: 100%;
+    height: 300%;
+    overflow: visible;
+    flex: relative;
+}
 .portfolio-item-individual {
     padding: 0 2em 2em;
-    max-width: 850px;
+    min-width: 850px;
     margin: 0 auto;
 }
 

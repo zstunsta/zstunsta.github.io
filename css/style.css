@@ -284,6 +284,7 @@ header {
 
 .intro__img {
     box-shadow: var(--bs);
+    z-index: 0;
     
 }
 

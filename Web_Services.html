@@ -45,30 +45,81 @@
 
         <section class="intro" id="home">
             <h1 class="section__title section__title--intro"> 
-                <strong></strong> <!--Change Input for each project.-->
+                Web Services
+                <strong>NERI</strong> <!--Change Input for each project.-->
                 
             </h1>
-            <p class="section__subtitle section__subtitle--intro-prog">.<br></p> 
-            <img src="" alt="" class="intro__img"> 
+            <p class="section__subtitle section__subtitle--intro"><strong>New River Gorge National Park</strong></p> 
+            <a href="https://ncsu.maps.arcgis.com/apps/webappviewer/index.html?id=d4803b5a8ebf498db8aecbef6d64c15a" class="intro__img">
+            <img src="img/NERI_small.png" alt="" class="intro__img"> <!--Title Image.-->
+            </a>
         </section>
 
         <div class="portfolio-item-individual">
-            <img src="img/TableAccess.png" alt="">
-            <p>New River National Park utility lines and habitat impact assesment data configured for a web mapping and web application environment.<br>Due to the black-out of the northeastern United States on August 14, 2003 and Homeland Security issues, the Federal government is investigating possible locations for new high power transmission lines to increase the stability of the United States power grid.  New River Gorge National River is being investigated as one possible location.  As part of the investigation, the effects of a new power transmission line corridor within the park boundary must be assessed.  </p>
-            <img src="img/NewRiver.png" alt="">
-            <p></p>
-            <img src="https://arcg.is/8iSbO" alt="">
-            <p></p>
+            
+            <p><strong>Problem</strong> <br>
+                <br>
+                Due to the black-out of the northeastern United States on August 14, 2003 and Homeland Security issues, the Federal government is investigating possible locations for new high power transmission lines to increase the stability of the United States power grid.  
+                New River Gorge National River is being investigated as one possible location.  
+                As part of the investigation, the effects of a new power transmission line corridor within the park boundary must be assessed.  </p>
+                In this project there are variety of stakeholders that require access to the data on the server.  
+                Because of this, we could not host the data using ArcGIS Online Web portal.  
+                A multiuser database is needed for hosting the backend data on a server.  
+                The ownership of this data is a government entity that requires the use of a custom web tool so, the data must be secure, mutable, and comprehensible.
+                <br><br>
+            <a href="https://ncsu.maps.arcgis.com/apps/webappviewer/index.html?id=d4803b5a8ebf498db8aecbef6d64c15a"> 
+            <img src="img/NewRiver.png" alt=""></a>
+            <figcaption> Figure 1. New River National Park utility lines and habitat impact assesment data configured for a web mapping application.</figcaption>
+            
+            <p><strong>Procedure</strong> <br>
+                In this project there are variety of stakeholders that require access to the data on the server.  
+                Because of this, we could not host the data using ArcGIS Online Web portal.  
+                A multiuser database is needed for hosting the backend data on a server.  
+                The ownership of this data is a government entity that requires the use of a custom web tool so, the data must be secure, mutable, and comprehensible.
+                <br>
+                <img src="img/TableAccess.png" alt="">
+            <figcaption> Figure 2. Data Relationship Diagram in Microsoft Access</figcaption>
+                 <br>
+                Database design is crucial to building an enterprise geodatabase.  
+                Considerations involve building topology, preserving structure using feature datasets, and the amount of time it takes to utilize geoprocessing over an internet connection.
+                The provided feature classes and table data were stored using a virtual sandbox environment where a licensed ArcGIS server is used to connect GIS data to the REST service endpoints.  
+                The server is managed and data is hosted using the open source relational database PostgreSQL.
+
+            </p>
+            <img src="img/pgadmin4.png" alt="">
+            <figcaption>Figure 3. PostgreSQL database manager environment highlighting related data tables.</figcaption>
+            <p><strong>Results</strong> <br>
+                This mapping application features a widget for querying the different species and habitats within the park boundary.  
+                There is also a custom map service tool incorporated in the web application that selects any habitat location within a specified distance to any new proposed utility line the stakeholders wish to draw or propose.  
+                This tool is meant to help stakeholders visualize the potential environmental impacts of creating a new utility line.
+                
+            </p>
+            <p><strong>Reflection</strong> <br>
+                The complexities of working in the enterprise GIS environment added a significant and valuable skillset to my understanding of GIS web services. 
+                There are many different ways to utilize GIS in a web environment.  All of these skills can be used in other web mapping applications. 
+                From building custom map surveys, to making dashboards and creating story apps, there are many different ways to tell a story with interactive spatial data. 
+            </p>
+            <a href="https://ncsu.maps.arcgis.com/apps/webappviewer/index.html?id=d4803b5a8ebf498db8aecbef6d64c15a">
+            <center><strong><br><br>Application Link</strong></center></a>
         </div>
         <section class="my-work" id="work">
             <h1> Other Web Applications</h1>
+            
             <div class="portfolio">
                 
+                <a href="https://ncsu.maps.arcgis.com/apps/webappviewer/index.html?id=506c6ae5fcce482eac4f91b9fa77d973" class="portfolio__item">
+                    <img src="img/SHEN.png" alt="#" class="portfolio__img"></a>
                 <a href="https://ncsu.maps.arcgis.com/apps/Cascade/index.html?appid=1852f13cc58b4222aa73a8c877f7ab9b" class="portfolio__item">
-                    <img src="img/serena.jpg" alt="#" class="portfolio__img">
-                    <a href="https://ncsu.maps.arcgis.com/apps/View/index.html?appid=3d00c09f8da343409b2a4ec9f11de93c" class="portfolio__item">
-                <img src="img/evac.png" alt="#" class="portfolio__img">  <!--Check for copyrite on this photo -->
-                </a>
+                    <img src="img/serena.jpg" alt="#" class="portfolio__img"></a>
+                <a href="https://ncsu.maps.arcgis.com/apps/View/index.html?appid=fd5a059ccbbd43e7a760c6ca8a63d173" class="portfolio__item">
+                    <img src="img/GEWA.png" alt="#" class="portfolio__img"></a>
+                <a href="https://ncsu.maps.arcgis.com/apps/View/index.html?appid=3d00c09f8da343409b2a4ec9f11de93c" class="portfolio__item">
+                    <img src="img/evac.png" alt="#" class="portfolio__img"></a>  <!--Check for copyrite on this photo -->
+                <a href="https://ncsu.maps.arcgis.com/apps/StorytellingSwipe/index.html?appid=13b676645d084420b84ce9a595a929c3" class="portfolio__item">
+                    <img src="img/Futures.png" alt="#" class="portfolio__img"> </a>
+                <a href="https://ncsu.maps.arcgis.com/apps/webappviewer/index.html?id=1bf9797023ac4c4d9ee13b8b6abdcaa2" class="portfolio__item">
+                    <img src="img/F9E.png" alt="#" class="portfolio__img"> </a>                 
+                
             </div>
         </section>                                                                                    
 

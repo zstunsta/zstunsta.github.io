@@ -31,7 +31,7 @@
                 <ul class="nav__list">
                     <li class="nav_item"><a href="index.html#home" class="nav__link">Home</a></li>
                     <li class="nav_item"><a href="index.html#about" class="nav__link">About me</a></li>
-                    <li class="nav_item"><a href="index.html#work" class="nav__link">Capstone Experience</a></li>
+                    <li class="nav_item"><a href="Capstone.html " class="nav__link">Capstone Experience</a></li>
                     <li class="nav_item"><a href="Hydrology_Page.html" class="nav__link">Modeling and Analytics</a></li>
                     <li class="nav_item"><a href="index.html#Imagery" class="nav__link">Imagery</a></li>
                     <li class="nav_item"><a href="Web_Services.html" class="nav__link">Web Services</a></li>
@@ -48,24 +48,51 @@
                 
             </h1>
             <p class="section__subtitle section__subtitle--intro-prog">George Washington Birthplace Memorial National Park</p> 
-            <img src="img/ER_diagram.jpg" alt="Lillington, NC hydrograph" class="intro__img"> 
+            <img src="img/FISH.png" alt="Lillington, NC hydrograph" class="intro__img"> <!--Title Image.-->
         </section>
 
         <div class="portfolio-item-individual"><br>
-            <strong>Problem<br>Procedure<br>Results<br>Reflection</strong>
-            <img src="img/FishAccess.png" alt="">
-            <img src="img/ER_diagram.jpg" alt="">
+           
+            
+            <p><strong>Problem</strong> <br>
+                Curators for the National Parks Service George Washington Birthplace monument are investigating a geodatabase to catalog the inventory of fish species data as well as other features around the park.
+                  They have provided text files for event recordings, x,y coordinates, local fish species, and inventory data of fish collected by wildlife researchers.
+            </p>
+            
+            <img src="img/ER_diagram.jpg" alt="Figure 2">
+            <figcaption> Figure 2. Entity-Relationship Diagram</figcaption>
+            <p><strong>Procedure</strong> <br>
+                Using Microsoft Access, these tables had their attributes listed and using key attributes as a way of interrelating the data.
+  In the figure above, Fig 1, you can see how this data looks in a Microsoft Access database.
+  The subsequent diagram following Fig 1 is the “Entity-Relationship Diagram” Fig 2.
+  This shows all the attributes of each text file, or csv table, and how each key attribute relates the tables together.  In red is the type of relationship each table has with its respective counterpart.
+  The varieties of different table relationships are one to many, many to one, one to one, or many to many.
+            </p>
+            <img src="img/FishAccess.png" alt="Figure 1">
+                <figcaption> Figure 1. Access Database Diagram</figcaption>
             <img src="img/FISH.png" alt="">
-            <p></p>
+            <figcaption> Figure 3. Dia Diagram showing relationships and key attribures.</figcaption>
+            <p><strong>Results</strong> <br>
+                Using open-source software called DIA to help create the data relationship diagram above, Fig 3, I was able to give each table attribute data types and character constraints.  
+                This assisted in writing the SQL based software languages (DDL & UML) for creating and writing this data into tables hosted on a server.  
+                The table data hosted on the server is used to provide location and species information that a user could query in a web mapping application.  
+                The map below, Fig 4, is the result of finding all instances of both small-mouth and large-mouth bass locations that could be used to find fishing spots for recreational fisherman.</p>
             <img src="img/GEWA.png" alt="">
-            <p></p>
+            <figcaption> Figure 4. Final Map of fish locations and bass locations off the waters of the park</figcaption>
+            <p><strong>Reflection</strong> <br>
+                The first thing that this project taught me how to use Microsoft Access.  
+I never really understood the purpose of hosting data in a database before, and this project gave me immense inside perspective on how and why computational data is stored in such a way.  
+I also had an opportunity to build my SQL skills by creating tablespaces within a hosted server environment.  
+The ability to write Data Definition Language, DDL, and Universal Modeling Language, UML, were critical for taking data in text format and creating a usable scalable application that a user can filter through to suit their needs.  
+For me, this was a core foundation for understanding hosted server data. 
+            </p>
         </div>
 
         
         </div>
         <section class="footer" id="">
         <div href="https://github.com/zstunsta/WebDevAndSQL/tree/main/gewa">
-            <a href="https://github.com/zstunsta/WebDevAndSQL">Data tables used in this project are stored at
+            <a href="https://github.com/zstunsta/WebDevAndSQL">More information including the data tables used in this project are stored at:
             <br>https://github.com/zstunsta/WebDevAndSQL/tree/main/gewa</a>
         </div>
         </section>                                                                                    

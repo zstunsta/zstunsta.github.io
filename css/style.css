@@ -29,8 +29,8 @@
 
 .light-mode {
     --clr-accent:#035c25f3; /* #528cb7 */
-    --clr-light:#e07407f3; /* #71ad88f3*/
-    --clr-dark:#100d3b; /* #1d0d3b */
+    --clr-light:#be650cf3; /* #71ad88f3*/
+    --clr-dark:#1d1974; /* #1d0d3b */
 }
 
 @media (min-with: 800px) {
@@ -526,6 +526,7 @@ text-decoration: none;
 .portfolio-item-individual-table {
     padding: 0 2em 2em;
     padding-top: 1rem;
+    padding-bottom: 0rem;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;  

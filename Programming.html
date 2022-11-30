@@ -33,9 +33,10 @@
                     <li class="nav_item"><a href="index.html#about" class="nav__link">About me</a></li>
                     <li class="nav_item"><a href="index.html#work" class="nav__link">Capstone Experience</a></li>
                     <li class="nav_item"><a href="Hydrology_Page.html" class="nav__link">Modeling and Analytics</a></li>
-                    <li class="nav_item"><a href="index.html#Imagery" class="nav__link">Imagery</a></li>
+                    <li class="nav_item"><a href="Database.html" class="nav__link">Database Management</a></li>
                     <li class="nav_item"><a href="Web_Services.html" class="nav__link">Web Services</a></li>
                     <li class="nav_item"><a href="index.html#Programming" class="nav__link">Programing</a></li>
+                    <li class="nav_item"><a href="Imagery.html" class="nav__link">Remote Sensing</a></li>
                     <li class="nav_item"><a href="index.html#Reflect" class="nav__link">Program Reflection</a></li>
                 </ul>
             </nav>
@@ -44,35 +45,47 @@
 
         <section class="intro" id="home">
             <h1 class="section__title section__title--intro"> Geospatial Programming 
-                <strong>VIIRS Fire Detection</strong> <!--Change Input for each project.-->
+                <strong>VIIRS </strong> <!--Change Input for each project.-->
                 
             </h1>
-            <p class="section__subtitle section__subtitle--intro-prog">This script tool gathers tab separated data from the University data base of VIIRS Fire detection locations and writes the data to a text file and converts the text <br>
-                 files into shape files.  The shapefiles are filtered and symbolized, added to a map layout, and exported as a GIF. For the time period selected by the user, the script <br>
-                 will export several GIFS at every habitable continent on Earth. These GIFs are combined and placed in an html file.<br></p> 
-            <img src="img/Legend.JPG" alt="Lillington, NC hydrograph" class="intro__img"> 
+            <p class="section__subtitle section__subtitle--intro"><strong>Visible Infrared Imager Radiometer Suite Fire Detection Script Tool</strong></p> 
+            <img src="img/Legend.JPG" alt="" class="intro__img"> 
         </section>
 
         <div class="portfolio-item-individual">
-            <center><strong>Project Github Link<br>https://github.com/tunstallzs/GIS540/blob/main/Final_Project_1.py<br><br></strong>
-            <img src="img/WorldFires3.gif" alt=""></center>
-            <p><br>This project aims to visualize change detection of forest fire location on a global scale.  
-                It requires a satellite platform that covers the globe on a daily basis.  
-                The Visible Infrared Imaging Radiometer Suite (VIIRS) sensor on the Suomi-NPP satellite uses a moderate imaging spectroradiometer that provides imagery at 375m resolution. 
-                While this may be considered coarse, it is perfect for capturing the entire globe in a short time span.  
-                The University of Maryland (UM) is responsible for creating an algorithm that is based on NASA's MODIS Fire Detection suite. 
-                UM provides data from the NOAA Satellite platform sensor VIIRS in a tab separated text file format.  
-                This data requires no log in credentials to access and is not specific to any one region. Most importantly, it is updated in “near real time” or on a daily basis.  
-                The text file format of this data makes it perfect to read and write using a python script.  
-                By taking fire detection information as a time series, we can detect when fires are forming, when they are extinguished, and we can identify areas where fires are more prevalent.  </p>
-            <img src="" alt="">
-            <p></p>
-            <img src="" alt="">
-            <p></p>
-        </div>
 
+            <p><strong>Problem</strong><br>This project aims to visualize change detection of forest fire location on a global scale. It requires a satellite platform that covers the globe on a daily basis. 
+                The Visible Infrared Imaging Radiometer Suite (VIIRS) sensor located on the Suomi-NPP satellite uses a moderate imaging spectroradiometer that provides imagery at 375m resolution. 
+                While this may be considered coarse, it is perfect for capturing the entire globe in a short time span. <br>
+                This script tool takes advantage of an algorithm that is based on NASA's MODIS Fire Detection suite. 
+                This script collects data from the NOAA Satellite platform in a tab separated text file format. 
+                Most importantly, it is updated in “near real time” or on a daily basis. 
+                The text file format of this data makes it perfect to read and write using a python script. By taking fire detection information as a time series, we can detect when fires are forming, when they are extinguished, and we can identify areas where fires are more prevalent  </p>
+            <img src="" alt="">
+            <p></p>
+            <img src="" alt="">
+            
+        
+            <p><strong>Procedure</strong> <br>
+                This script tool gathers tab separated data from an online database of Fire detection locations and writes the data to a text file.  
+                It then converts the text files into point feature shapefiles. The shapefiles are filtered and symbolized using a layer template seen in the legend at the top of the page.  
+                The shape files are then added to all the maps layouts that are seen in the results. Those map layout documents are exported as a GIF. 
+                These GIFs are combined and placed in an html format for incorporating into a webpage.
+            </p>
+                <img src="img/pseudo.png" alt="Figure 2">
+            <figcaption> Figure 1. Pseudocode descibing the processing of the script tool.</figcaption>
+            <p><strong>Results</strong> <br>
+                The results of running this tool come from creating 6 different map layouts for each continent on the planet, excluding antarctica.  
+The results give a global perspective on just how many fires go on globally each day.  
+The locations of each detected fire are categorized into 3 categories that represent the heat intensity of each fire. 
+Red points are fires with over 100 megaWatts of intensity.
+Yellow points are fires intensities between 50 and 200 megawatts.
+Green points are fires with under 50 megaWatts of intensity.
+            </p>
+            
+        </div>
         <div class="portfolio-item-individual-table">
-            <h1>Geoprocessing Tool GUI<br></h1>
+            <h2>Geoprocessing Tool GUI<br></h2>
             <p><br></p>
             <center>
             <img src="img/toolGUI.jpg" alt="">
@@ -167,10 +180,27 @@
                 </td>
                 </tr>
                 </tbody>
-                </table>
+                </table><caption><br>Table 1. User input variable descriptions.</caption>
             </p>
-        </div>
+            </div>
+            <div class="portfolio-item-individual">                
+                    <center><img src="img/WorldFires3.gif" alt="">
+                        <figcaption> Figure 3. Global view of script tool output.</figcaption>
+                    <a href="https://github.com/tunstallzs/GIS540/blob/main/Final_Project_1.py">
+                        <strong><br><br>Project Github Link<br><br><br></strong>
+                    </center>
+                    </a>
+                <p><strong>Reflection</strong><br>
+                    This script tool was written using the IDE Pythonwin2.8 using the programing language Python2.8.  
+                    Today this is considered an outdated version of the language.  Working with Python2.8 helped to understand geospatial programming standards at a fundamental level.  
+                    This was my first script that incorporated multiple coding elements such as debugging, modules, cursors, and batch processing. 
+                    From this project, I learned the importance of code structure.  
+                    This has been critical to understand the basis for many different programming languages.
+                </p>
+            </div>    
+        
         <section class="my-work" id="work">
+            <p><strong>Continental map views of world fires<br></strong> Detected between Jul 30, 2020 to June 04, 2020 using a 2 day interval with 75% confidence</p>
             <div class="portfolio">
                 <img src="img/NAFires.gif" alt="#" class="portfolio__img">
                 <img src="img/EUFires.gif" alt="#" class="portfolio__img">

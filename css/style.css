@@ -341,8 +341,10 @@ header {
 
 .projects {
     background-color: var(--clr-dark);
-    background: url(../img/SAFires.gif) bottom, url(../img/SAFires.gif) top; /*../img/NAFiers.gif replace background image */
-    background-size: 50rem;
+    background: url(../img/NAFires.gif) no-repeat, url(../img/SAFires.gif) no-repeat 0% 120%, 
+        url(../img/AfricaFires.gif) no-repeat 50% 120%, url(../img/EUFires.gif) no-repeat 60% 0%, url(../img/AsiaFires.gif) no-repeat 120% 0%,
+        url(../img/AusFires.gif) no-repeat 100% 120%,  url(../img/WorldFires3.gif);
+    background-size: auto;
     background-blend-mode: normal;
     color: var(--clr-dark);
     text-align: center;
@@ -360,7 +362,7 @@ header {
     display: block;
     width: 25%;
     height: 1px;
-    margin: 0.5em auto 1em;
+    margin: 0em auto 1em;
     background: var(--clr-dark);
     opacity: .1;
 }
@@ -369,28 +371,15 @@ header {
 }
 
 .project {
-    max-width: 500px;
+    max-width: auto;
     margin: 0 auto;
 }
 .proj_img {
-    max-width:1000px;
-    margin: 0 auto;
+    display: grid;
+    grid-row: auto;
+    max-width:800px;
+    margin: auto auto;
 }
-@media (min-width: 800px) {
-    .project {
-        display: contents; /*Changed flex to contents 6/22/22. */
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .project +.project {
-        margin-left: 2em;
-    }
-    
-
-
-}
-
 /*About Me section */
 
 .about-me {

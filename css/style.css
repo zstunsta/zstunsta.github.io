@@ -341,9 +341,9 @@ header {
 
 .projects {
     background-color: var(--clr-dark);
-    background: url(../img/NAFires.gif) no-repeat, url(../img/SAFires.gif) no-repeat 0% 120%, 
+    background: url(../img/Capstoneback.png);/*url(../img/NAFires.gif) no-repeat, url(../img/SAFires.gif) no-repeat 0% 120%, 
         url(../img/AfricaFires.gif) no-repeat 50% 120%, url(../img/EUFires.gif) no-repeat 60% 0%, url(../img/AsiaFires.gif) no-repeat 120% 0%,
-        url(../img/AusFires.gif) no-repeat 100% 120%,  url(../img/WorldFires3.gif);
+        url(../img/AusFires.gif) no-repeat 100% 120%,  url(../img/WorldFires3.gif); */
     background-size: auto;
     background-blend-mode: normal;
     color: var(--clr-dark);

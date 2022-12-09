@@ -45,41 +45,63 @@
 
         <section class="intro" id="home">
             <h1 class="section__title section__title--intro"> Remote Sensing 
-                <strong>Imagery</strong> <!--Change Input for each project.-->   
+                <strong>Weighted Overlay</strong> <!--Change Input for each project.-->   
             </h1>
-            <p class="section__subtitle section__subtitle--intro-prog"><br></p> 
-            <img src="img/Legend.JPG" alt="Lillington, NC hydrograph" class="intro__img"> 
+            <p class="section__subtitle section__subtitle--intro"><strong>Aerial Data Classification of a Wildlife Refuge</strong></p> 
+            <img src="img/Wover.png" alt="Lillington, NC hydrograph" class="intro__img">
+            
         </section>
 
         <div class="portfolio-item-individual">
-            <strong><br>Aerial Data Classification of a Wildlife Refuge<br><br></strong>
-            <img src="img/WorldFires3.gif" alt="">
+            <strong><br><br><br></strong>
+           
             <p><strong>Problem</strong><br>
                 Water National Wildlife Refuge wishes to create a process for classifying and managing land cover data for the park.  
                 To aid in this process we have been asked to use an image of the park and utilize the image classification capabilities 
                 of GIS to help create a database for the park.  <br>
             </p>
-            <img src="" alt="">
+            
+            <p><strong>Procedure</strong><br>
+The strategies involved in this assignment will be to convert elevation data and shapefile provided into raster data.  To create a flow diagram that breaks the complexity down into step-by-step process and to make the process repeatable I used Model Builder software built into ArcGIS Pro.  
+I used the Reclassify tool and the Weighted Overlay, Slope, Reclassify and other tools to identify criteria and match criteria to appropriate habitat locations for Black Bears. <br>    
+I classified vegetative stands into their respective categories placing grape thickets as the highest value, and hardwoods as the second highest, all other having the lowest value. 
+ I also classified the slope of the hillside into categories giving 0, 30, and 60 as the inflection points for each category.  
+Once all feature classes have been reclassified, I used them as inputs for the weighted overlay tool giving them all equal value and classifying each pixel in the study area into the three favorability categories.  
+Once this process is finished all that is left is to symbolize the data appropriately and create visual map documents
+            
+            <img src="img/BBModel.PNG" alt=""><caption> Weighted Overlay Model in Model Builder</caption> 
+
+            <p><strong>Results</strong><br>
+                To identify new habitat areas for Black Bears I used the Weighted Overlay method of analyzing raster data.
+                The final map product shows the classification of data into 3 categories that represent the original criteria that was given the project.  
+                Each of the original files represents a feature that has criteria that must be categorized into either least favorable, favorable, or most favorable habitats.
+                The favorability of Black Bear Habitats shown in the map below shows areas far enough away from potential human contact and availability to food and water resources.
+            <img src="img/BlackBearRelocateSite.jpg" alt="">
+            <caption>Black Bear habitat Map</caption>
             <p><strong>Reflection</strong><br>
                 The techniques learned in this assignment involved taking aerial image data and classifying the different types of land cover in that image.  Then, converting that image data and configuring the total area of each land type.  This will be valuable for use in a career in forestry.
                 I plan on using the techniques from this assignment to perform calculations of regional/state/national forest and park land to identify precise acreage of certain types of land cover.
                 I will use either aerial images from either planes or drones perform these calculations.  
                 Then I will use the imagery and use ArcGIS software to perform image classification methods to create a tiff or GRID file.  I will then either create an attribute table for the tiff file or perform a field calculation using the pixel count from the attribute table
-            <br>
-            In both photos there were large sections of the cultivated farmland that were mischaracterized as forested.  I believe that this is due to the heterogeneous pixel patterns in the forested land cover areas which, may have been my largest source of error.
-              One major difference between the two outcomes was the intersection of wetlands and river, this can be seen in the area calculation in the two tables shown below.  In the first map, I used larger polygons on the water areas, only accounting for the overall color of the river.  In the second attempt, I zoomed in until I could see individual pixels.
-                I used smaller polygons, and I got higher accuracy with regards to the water class.  Also, the wetland area was reduced on the second attempt because I used smaller and more homogenous pixel colors when forming these polygons.  Two areas of interest are the differences between both developed land and the wetland areas.
-                  On the first attempt, both the Wetland and Developed classes are much higher and the second attempt.
-                  I think that this may be due to more time spent on training these polygons on the second attempt.
-              I do think that the developed area on the first attempt may reflect better accuracy due to the shape of the highway the runs through the image but, the wetland category seems to reflect better accuracy in the second classification attempt.</p>
-            <img src="" alt="">
-            <p></p>
+
         </div>
 
         
         <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">Other Remote Sensing Maps</h2>
+            <p class="section__subtitle section__subtitle--work">Created in ArcGIS Platforms, Google Earth Engine, and Grass GIS</p>
             <div class="portfolio">
-                <img src="img/NAFires.gif" alt="#" class="portfolio__img">
+
+                    <!--Portfolio item 11-->
+                                
+                    <img src="img/landcover.jpg" alt="#" class="portfolio__img">
+                    <img src="img/elev_ned.jpg" alt="#" class="portfolio__img">            
+                    <!--Portfolio item 03 -->
+                
+                    <img src="img/WakeLC.png" alt="#" class="portfolio__img">
+                
+                    <img src="img/NDVI.jpg" alt="#" class="portfolio__img">
+                
             </div>
         </section>                                                                                    
 

@@ -63,8 +63,8 @@
             <p><strong>Procedure</strong> <br>
                 The procedure used to create this model consisted of several stages, starting with data collection.  
                 Aerial imagery was found using open-source government owned platforms.  
-                The government agencies used were the Florida DOT, USGS, and USDA’s National Agriculture Imagery Program.  
-                The images were then organized and given new file names to match naming conventions for ESRI’s time-enabled data schema.  
+                The government agencies used were the Florida DOT, USGS, and USDA National Agriculture Imagery Program.  
+                The images were then organized and given new file names to match naming conventions for ESRI time-enabled data schema.  
                 Vector data was created using CAD features within the ArcGIS Pro software. 
                 Trees were marked using coordinates for the first planting in each row and using a spacing of 10 feet between citrus trees. <br> 
 
@@ -74,7 +74,7 @@
                 These formulas were selected because of their accuracy and calculated RMS error margins were close in range to that of NDVI.  
                 The formulas for these vegetation indices are: <br>
             </p>
-            <img src="img/vegindex.png" alt="Vegetation Indices">
+            <img src="img/vegindex.png" alt="Vegetation Indices"><caption>Figure 1. Vegetation Index Formulas Used in Project </caption><br> 
            <p>
                 All three of these indices were calculated over the study area and a best choice for each image was selected based on visually determined accuracy of the results.  
                 A threshold value was then set based on the average value calculated for each raster layer created from the calculation of each index.  
@@ -84,7 +84,7 @@
                 This table yields the timeline of existence for each citrus tree in the study area along with the associated vegetation index value.  
                 The geoprocessing model for this project was created in ArcGIS Pro Model builder. <br>
            </p>
-           <img src="img/ModelBuilder.png" alt="Model Builder">
+           <img src="img/ModelBuilder.png" alt="Model Builder"> <caption>Figure 2. Model Builder of Geoprocessing Tool in ArcGIS Pro.</caption><br> 
 
             <p><strong>Results</strong> <br>
                 The results gathered from current iterations of the geoprocessing model shows a significant reduction in in living citrus trees starting sometime between 2006 and 2008.  
@@ -92,9 +92,10 @@
                 However, the results of the model in more recent years do not correlate with visual observations in the images.   
                 There are several speculative reasons for this large shift in data accuracy as discussed in the Discussion section. <br>
             </p>
-            <img src="img/Layout2003.png" alt="Map1"><br>
-            <img src="img/Layout2008.png" alt="Map2"><br>
-            <img src="img/Layout2017.png" alt="Map3"><br>
+            <img src="img/Layout2003.png" alt="Map1"><caption>Figure 3. Field 9E in 2006 before the Disease was Determined to be Present in Florida.</caption><br> <br>
+            <img src="img/Layout2008.png" alt="Map2"><caption>Figure 4. Field 9E in 2011 Showing a Significant Reduction in Alive Trees.</caption><br> <br>
+            <img src="img/Layout2017.png" alt="Map3"><caption>Figure 5. Field 9E in 2020 Showing a Set of data that is highly inaccurate.</caption><br> <br>
+            <caption>Table 1. Sample Results Table Highlighting Timeline of Individual Trees Detected by the Geoprocessing Model</caption>
             <img src="img/table1.png" alt="Table">
             <p><strong>Discussion</strong> <br> 
                 The first attempted method of solving this spatial problem was to train a machine learning classifier to detect individual citrus trees.  
